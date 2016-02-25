@@ -8,7 +8,7 @@ ENV RABBITMQ_USER sensu
 ENV RABBITMQ_PASS sensu
 
 ADD http://repos.sensuapp.org/apt/pubkey.gpg /tmp/pubkey.gpg
-
+RUN apt-get update
 RUN \
   apt-get install -y ruby ruby-dev build-essential git procps apt-utils bc \
   && gem install sensu-plugin redis docker docker-api etcd --no-rdoc --no-ri \

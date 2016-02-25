@@ -32,6 +32,14 @@ cat << EOF > /etc/sensu/config.json
     "name": "$CLIENT_NAME",
     "address": "$CLIENT_ADDRESS",
     "subscriptions": ["$SUBSCRIPTIONS"],
+    "keepalive": {
+      "occurrences": 2,
+      "refresh": 300,
+      "thresholds": {
+        "warning": 60,
+        "critical": 90
+    },
+    "handlers": ["mailer", "slack"],
     "socket": {
       "bind":"0.0.0.0",
       "port":3030
