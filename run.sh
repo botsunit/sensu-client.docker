@@ -39,7 +39,7 @@ cat << EOF > /etc/sensu/config.json
         "warning": 60,
         "critical": 90
     },
-    "handlers": ["mailer", "slack"],
+    "handlers": ["mailer", "slack", "opsgenie"],
     "socket": {
       "bind":"0.0.0.0",
       "port":3030
